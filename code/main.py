@@ -40,13 +40,14 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             db().query("UPDATE stats SET print_jobs = print_jobs + 1")
             newprint()
-            subprocess.call('/home/rratcliffe/github/printer/code/scripts/print.sh upload_folder/'+ filename, shell=True)
+            subprocess.call('/home/pi/git/printer/code/scripts/print.sh upload_folder/'+ filename, shell=True)
+            return "Your document has printed!"
+        
         elif (allowed_file(file.filename)==False):
             return "INVALID FILETYPE NOTHING WAS PRINTED \n allowed types: 'md','doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'"
 
             #PRINT THE FILE!
             #printing code here!
-            return "Your document has printed!"
     db().query("UPDATE stats SET visits = visits + 1")
     newvisitor()
     return render_template("index.html",async_mode=socketio.async_mode)

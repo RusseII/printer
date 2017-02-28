@@ -1,3 +1,3 @@
 
-lpr $1 
+lpr -P HP-LaserJet-P4515 $1 
 
