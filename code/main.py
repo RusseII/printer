@@ -7,7 +7,7 @@ from flask_socketio import SocketIO, send, emit, join_room, leave_room, \
             Namespace
 
 UPLOAD_FOLDER = 'upload_folder/'
-ALLOWED_EXTENSIONS = set(['doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['md','doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'])
 
 async_mode = None
 
@@ -41,6 +41,8 @@ def upload_file():
             db().query("UPDATE stats SET print_jobs = print_jobs + 1")
             newprint()
             subprocess.call('/home/rratcliffe/github/printer/code/scripts/print.sh upload_folder/'+ filename, shell=True)
+        elif (allowed_file(file.filename)==False):
+            return "INVALID FILETYPE NOTHING WAS PRINTED \n allowed types: 'md','doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv'"
 
             #PRINT THE FILE!
             #printing code here!

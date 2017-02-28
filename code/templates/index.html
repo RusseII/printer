@@ -54,11 +54,11 @@
             // The callback function is invoked when a connection with the
             // server is established.
             socket.on('visitor_update', function(msg) {
-              $('#visitors').text("Visitors: " + msg.data)
+              $('#visitors').text("Page Visits: " + msg.data)
                   
             });
               socket.on('print_job_update', function(msg) {
-              $('#prints').text("Prints: " + msg.data)
+              $('#prints').text("Prints Jobs: " + msg.data)
                   
             });
               socket.on('connect', function() {
@@ -86,16 +86,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Coming Soon</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">Coming Soon</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Coming Soon</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Coming Soon</a>
                     </li>
                 </ul>
             </div>
@@ -132,12 +132,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <h2 class="section-heading">Other cool stuff</h2>
                     <hr class="primary">
                     <div id="statBox">
                         <p>Statistics</p>
-                          <p id="visitors">Visitors: 40</p>
-                            <p id="prints">Prints: 100</p>
+                          <p id="visitors"></p>
+                            <p id="prints"></p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
@@ -146,7 +146,7 @@
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a href="mailto:your-email@your-domain.com">feedback@comingsoon.com</a></p>
                 </div>
             </div>
         </div>
